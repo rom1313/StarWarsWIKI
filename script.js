@@ -5,8 +5,10 @@ let regexSidious = /SIDIOUS/gi
 
 
 async function getData(name) {
+
     document.querySelector('#portrait').style.background = ''
     document.querySelector('#portrait').style.display = 'none'
+
     document.querySelector('#info').style.display = 'none'
     let personnage;
     let nom;
@@ -26,14 +28,20 @@ async function getData(name) {
         .then((json) => {
             console.log(json);
             personnage = json
-
+            document.querySelector('#portrait').style.display = 'flex'
+            document.querySelector('#portrait').style.animation = 'apparition ease-in 1.2s forwards'
             if (personnage.count > 1 || personnage.count === 0) {
+
+                document.querySelector('#alerte').style.display = 'flex'
+                document.querySelector('#alerte').style.animation = 'apparition ease-in 1.2s forwards'
                 console.log('erreur');
                 return
             }
             else {
-                document.querySelector('#portrait').style.display = 'flex'
-                document.querySelector('#portrait').style.animation = 'apparition ease-in 1.2s forwards'
+
+                document.querySelector('#alerte').style.display = 'none'
+
+
                 document.querySelector('#info').style.display = 'flex'
                 document.querySelector('#info').style.animation = 'apparition ease-in 1.2s forwards'
 
@@ -64,6 +72,38 @@ async function getData(name) {
                     creationportrait('lando')
 
                 }
+                else if (personnage.results[0].name === "Yoda") {
+                    nomfr = 'Yoda (Maître Yoda)'
+                    nom.textContent = ` ${nomfr} `
+
+                    creationportrait('yoda')
+
+                }
+                else if (personnage.results[0].name === "Luke Skywalker") {
+
+                    nom.textContent = ` ${personnage.results[0].name} `
+                    creationportrait('luke')
+
+                }
+                else if (personnage.results[0].name === "Padmé Amidala") {
+                    nom.textContent = ` ${personnage.results[0].name} `
+
+                    creationportrait('padme')
+
+                }
+                else if (personnage.results[0].name === "Obi-Wan Kenobi") {
+                    nomfr = 'Obi-Wan Kenobi (Ben Kenobi)'
+                    nom.textContent = ` ${nomfr} `
+
+                    creationportrait('obiwan')
+
+                }
+                else if (personnage.results[0].name === "Qui-Gon Jinn") {
+                    nom.textContent = ` ${personnage.results[0].name} `
+
+                    creationportrait('quigon')
+
+                }
                 else {
                     nom.textContent = ` ${personnage.results[0].name} `
                 }
@@ -88,7 +128,7 @@ async function getData(name) {
                 if (personnage.results[0].skin_color === 'white') {
                     peaufr = "Très pâle"
                 }
-                else if (personnage.results[0].skin_color === 'fair') {
+                else if (personnage.results[0].skin_color === 'fair' || personnage.results[0].skin_color === 'light') {
                     peaufr = "Claire"
                 }
                 else if (personnage.results[0].skin_color === 'pale') {
@@ -100,6 +140,13 @@ async function getData(name) {
                 else if (personnage.results[0].skin_color === 'green') {
                     peaufr = "Verte"
                 }
+                else if (personnage.results[0].skin_color === "green-tan, brown") {
+                    peaufr = "Beige / Verte"
+                }
+                else if (personnage.results[0].skin_color === "red") {
+                    peaufr = "Rouge"
+                }
+
                 peau.textContent = peaufr
 
                 // todo ------------------------- yeux
@@ -193,8 +240,9 @@ async function getData(name) {
                 sexe.textContent = ` ${sexefr} `
 
             }
-        });
 
+        });
+    document.querySelector('#input').value = ''
 }
 
 // todo ------------------------- Event entrer
@@ -203,13 +251,8 @@ document.querySelector('body').addEventListener('keypress', function (e) {
 
     if (e.key === 'Enter') {
         recherche = document.querySelector('#input').value
+        annalyserecherche(recherche)
 
-        if (recherche === '') {
-            return
-        }
-        else {
-            annalyserecherche(recherche)
-        }
 
 
     }

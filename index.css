@@ -9,6 +9,17 @@
     }
 }
 
+@keyframes disparition {
+    from {
+        opacity: 100%;
+    }
+
+    to {
+        opacity: 0%;
+
+    }
+}
+
 html,
 ::after,
 ::before {
@@ -137,21 +148,12 @@ input {
     padding-left: 7px;
     box-shadow: 0px 1px 5px rgb(0, 0, 0) inset;
     border: solid 1px black;
+    margin-top: 13px;
+    margin-left: 10px;
 
 }
 
-#blockalerte {
-    position: absolute;
-    top: 50%;
-    left: -20%;
-    transform: translate(-50%, -50%);
-    overflow: visible;
-    text-align: center;
-    width: fit-content;
-    display: none;
-    z-index: 0;
 
-}
 
 #c3po {
     z-index: 0;
@@ -161,10 +163,10 @@ input {
     color: rgb(221, 0, 0);
     position: absolute;
     z-index: 3;
-    top: -25%;
-    left: 0%;
+    top: 60px;
+    left: 15px;
     text-shadow: 0px 0px 0px rgb(0, 0, 0);
-
+    display: none;
     text-align: center;
 
 }
@@ -172,29 +174,32 @@ input {
 #calqueportrait {
     animation: apparition 1.8s ease-in-out infinite alternate;
 }
+
 @media (min-width: 2000px) {
 
-    #card{
+    #card {
         top: 30%;
-        
+
         left: 50%;
         transform: translate(-50%, -50%);
     }
 }
+
 @media (min-width: 1900px) and (max-width: 2999px) {
 
-    #card{
+    #card {
         top: 50%;
-        
+
         left: 50%;
         transform: translate(-50%, -50%);
     }
 }
+
 @media (min-width: 1600px) and (max-width: 1919px) {
 
-    #card{
+    #card {
         top: 55%;
-        
+
         left: 50%;
         transform: translate(-50%, -50%);
     }
@@ -202,9 +207,9 @@ input {
 
 @media (min-width: 1440px) and (max-width: 1599px) {
 
-    #card{
+    #card {
         top: 55%;
-        
+
         left: 50%;
         transform: translate(-50%, -50%);
     }
