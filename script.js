@@ -23,7 +23,7 @@ async function getData(name) {
         .then((json) => {
             console.log(json);
             personnage = json
-            console.log(personnage.count);
+
             if (personnage.count > 1) {
                 console.log('erreur');
                 return
@@ -140,6 +140,8 @@ async function getData(name) {
         });
 
 }
+
+// todo ------------------------- Event entrer
 document.querySelector('body').addEventListener('keypress', function (e) {
     let regexVador = /VADOR/gi
 
@@ -161,23 +163,24 @@ document.querySelector('body').addEventListener('keypress', function (e) {
     }
 });
 
+// todo ------------------------- Event click boutton recheche
 document.querySelector('#recherche').addEventListener('click', (e) => {
-    if (e.key === 'Enter') {
-        recherche = document.querySelector('#input').value
-        if (recherche === '') {
-            return
-        }
-        if (regexVador.test(recherche) === true) {
 
-            getData('vader')
-            return
-        }
-        else {
-            console.log(recherche);
-            getData(recherche)
-        }
-
+    recherche = document.querySelector('#input').value
+    if (recherche === '') {
+        return
     }
+    if (regexVador.test(recherche) === true) {
+
+        getData('vader')
+        return
+    }
+    else {
+        console.log(recherche);
+        getData(recherche)
+    }
+
+
 
 
 
