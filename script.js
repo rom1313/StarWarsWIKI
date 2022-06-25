@@ -1,6 +1,6 @@
 let recherche;
 let genius = $
-
+let regexVador = /VADOR/gi
 
 
 async function getData(name) {
@@ -143,7 +143,7 @@ async function getData(name) {
 
 // todo ------------------------- Event entrer
 document.querySelector('body').addEventListener('keypress', function (e) {
-    let regexVador = /VADOR/gi
+
 
     if (e.key === 'Enter') {
         recherche = document.querySelector('#input').value
