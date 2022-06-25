@@ -6,7 +6,8 @@ let regexSidious = /SIDIOUS/gi
 
 async function getData(name) {
     document.querySelector('#portrait').style.background = ''
-
+    document.querySelector('#portrait').style.display = 'none'
+    document.querySelector('#info').style.display = 'none'
     let personnage;
     let nom;
     let taille;
@@ -31,6 +32,8 @@ async function getData(name) {
                 return
             }
             else {
+                document.querySelector('#portrait').style.display = 'flex'
+                document.querySelector('#portrait').style.animation = 'apparition ease-in 1.2s forwards'
                 document.querySelector('#info').style.display = 'flex'
                 document.querySelector('#info').style.animation = 'apparition ease-in 1.2s forwards'
 
@@ -221,23 +224,3 @@ document.querySelector('#recherche').addEventListener('click', (e) => {
 
 })
 
-function creationportrait(nom) {
-    if (nom === 'vador') {
-
-        document.querySelector('#portrait').style.background = 'url("/img/vador.png")'
-    }
-    if (nom === 'sidious') {
-
-        document.querySelector('#portrait').style.background = 'url("/img/sidious.png")'
-    }
-    if (nom === 'lando') {
-
-        document.querySelector('#portrait').style.background = 'url("/img/lando.png")'
-    }
-    if (nom === 'anakin') {
-
-        document.querySelector('#portrait').style.background = 'url("/img/anakin.png")'
-    }
-
-
-}
