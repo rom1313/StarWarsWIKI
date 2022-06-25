@@ -1,0 +1,146 @@
+html,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    background-color: #FAD961;
+    background-image: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);
+    user-select: none;
+
+}
+
+body {}
+
+#card {
+    position: absolute;
+    background-color: #391500;
+    border: solid 0.5px black;
+    width: 800px;
+    height: 400px;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    box-shadow: 0px 1px 10px rgb(0, 0, 0), 0px 0px 10px rgba(0, 0, 0, 0.667) inset;
+    border: solid 1px black;
+
+}
+
+#titre {
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+span {
+    margin-left: 15px;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: black;
+    color: rgb(247, 156, 0);
+    border-radius: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 1px;
+    padding-bottom: 2px;
+
+}
+
+#info {
+    position: absolute;
+    top: 35%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 28px;
+    z-index: 2;
+
+}
+
+.blockinfo {
+
+    display: flex;
+    text-align: center;
+    padding: 0px;
+    align-items: center;
+    width: 500px;
+    height: fit-content;
+    position: relative;
+
+    margin-left: 290px;
+
+
+}
+
+p {
+    PADDING-left: 3px;
+    font-size: larger;
+    margin: 4px;
+    height: fit-content;
+    color: rgb(255, 255, 255);
+    width: fit-content;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 0px 0px 9px rgb(0, 0, 0);
+
+
+}
+
+#portrait {
+    background-color: black;
+    width: 450px;
+    height: 360px;
+    position: absolute;
+    right: 15px;
+    top: 20px;
+    z-index: 1;
+    border-radius: 5px;
+}
+
+#recherche {
+
+    background-color: #391500;
+    color: white;
+    user-select: none;
+    cursor: pointer;
+}
+
+input {
+    outline: none;
+    border-style: none;
+    user-select: none;
+}
+
+#blockalerte {
+    position: absolute;
+    top: 50%;
+    left: -20%;
+    transform: translate(-50%, -50%);
+    overflow: visible;
+    text-align: center;
+    width: fit-content;
+    background-color: ;
+
+    z-index: 0;
+    display: flex;
+}
+
+#c3po {
+    z-index: 0;
+}
+
+#alerte {
+    color: rgb(221, 0, 0);
+    position: absolute;
+    z-index: 3;
+    top: -25%;
+    left: 0%;
+    text-shadow: 0px 0px 0px rgb(0, 0, 0);
+    
+    text-align: center;
+}
