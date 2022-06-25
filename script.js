@@ -1,12 +1,13 @@
 let recherche;
 let genius = $
 let regexVador = /VADOR/gi
+let regexSidious = /SIDIOUS/gi
 
 
 async function getData(name) {
     document.querySelector('#portrait').style.background = ''
-    let personnage;
 
+    let personnage;
     let nom;
     let taille;
     let poids;
@@ -25,11 +26,14 @@ async function getData(name) {
             console.log(json);
             personnage = json
 
-            if (personnage.count > 1) {
+            if (personnage.count > 1 || personnage.count === 0) {
                 console.log('erreur');
                 return
             }
             else {
+                document.querySelector('#info').style.display = 'flex'
+                document.querySelector('#info').style.animation = 'apparition ease-in 1.2s forwards'
+
                 // todo ------------------------- nom
                 nom = document.querySelector('#nom')
                 let nomfr
@@ -37,6 +41,18 @@ async function getData(name) {
                     nomfr = 'Dark Vador (Anakin Skywalker)'
                     nom.textContent = ` ${nomfr} `
                     creationportrait('vador')
+
+                }
+                else if (personnage.results[0].name === "Palpatine") {
+                    nomfr = 'Dark Sidious (Palpatine)'
+                    nom.textContent = ` ${nomfr} `
+                    creationportrait('sidious')
+
+                }
+                else if (personnage.results[0].name === "Lando Calrissian") {
+                    nom.textContent = ` ${personnage.results[0].name} `
+
+                    creationportrait('lando')
 
                 }
                 else {
@@ -59,7 +75,23 @@ async function getData(name) {
 
                 // todo ------------------------- peau
                 peau = document.querySelector('#peau')
-                peau.textContent = ` ${personnage.results[0].skin_color} `
+                let peaufr
+                if (personnage.results[0].skin_color === 'white') {
+                    peaufr = "Très pâle"
+                }
+                else if (personnage.results[0].skin_color === 'fair') {
+                    peaufr = "Claire"
+                }
+                else if (personnage.results[0].skin_color === 'pale') {
+                    peaufr = "Pâle"
+                }
+                else if (personnage.results[0].skin_color === 'dark') {
+                    peaufr = "Sombre"
+                }
+                else if (personnage.results[0].skin_color === 'green') {
+                    peaufr = "Verte"
+                }
+                peau.textContent = peaufr
 
                 // todo ------------------------- yeux
                 yeux = document.querySelector('#yeux')
@@ -68,28 +100,34 @@ async function getData(name) {
                     yeuxfr = 'Rouges'
 
                 }
-                if (personnage.results[0].eye_color === 'blue') {
+                else if (personnage.results[0].eye_color === 'blue') {
                     yeuxfr = 'Bleus'
 
                 }
 
-                if (personnage.results[0].eye_color === 'green') {
+                else if (personnage.results[0].eye_color === 'green') {
                     yeuxfr = 'Verts'
 
                 }
 
-                if (personnage.results[0].eye_color === 'yellow') {
+                else if (personnage.results[0].eye_color === 'yellow') {
                     yeuxfr = 'Jaunes'
 
                 }
-                if (personnage.results[0].eye_color === 'brown') {
+                else if (personnage.results[0].eye_color === 'brown') {
                     yeuxfr = 'Marrons'
 
                 }
-                if (personnage.results[0].eye_color === 'orange') {
+                else if (personnage.results[0].eye_color === 'orange') {
                     yeuxfr = 'Oranges'
 
                 }
+                else if (personnage.results[0].eye_color === 'blue-gray') {
+                    yeuxfr = 'Bleus'
+
+                }
+
+
 
 
 
@@ -102,21 +140,28 @@ async function getData(name) {
                 if (personnage.results[0].hair_color === 'blond') {
                     cheveuxfr = 'Blonds'
                 }
-                if (personnage.results[0].hair_color === 'none') {
+                else if (personnage.results[0].hair_color === 'none') {
                     cheveuxfr = 'Chauve'
                 }
-                if (personnage.results[0].hair_color === 'brown') {
+                else if (personnage.results[0].hair_color === 'brown') {
                     cheveuxfr = 'Bruns'
                 }
-                if (personnage.results[0].hair_color === 'grey') {
+                else if (personnage.results[0].hair_color === 'grey') {
                     cheveuxfr = 'Grisonnants'
                 }
-                if (personnage.results[0].hair_color === 'black') {
+                else if (personnage.results[0].hair_color === 'black') {
                     cheveuxfr = 'Noirs'
                 }
-                if (personnage.results[0].hair_color === 'n/a') {
+                else if (personnage.results[0].hair_color === 'n/a') {
                     cheveuxfr = 'Sans cheveux'
                 }
+                else if (personnage.results[0].hair_color === 'white') {
+                    cheveuxfr = 'Blancs'
+                }
+                else if (personnage.results[0].hair_color === 'auburn, white') {
+                    cheveuxfr = 'Chatains / Blancs'
+                }
+
                 cheveux.textContent = ` ${cheveuxfr}`
 
                 // todo ------------------------- sexe
@@ -126,13 +171,13 @@ async function getData(name) {
                     sexefr = ' Masculin'
 
                 }
-                if (personnage.results[0].gender === 'female') {
+                else if (personnage.results[0].gender === 'female') {
                     sexefr = 'Feminin'
                 }
-                if (personnage.results[0].gender === 'n/a') {
+                else if (personnage.results[0].gender === 'n/a') {
                     sexefr = 'Non défini'
                 }
-                if (personnage.results[0].gender === 'hermaphrodite') {
+                else if (personnage.results[0].gender === 'hermaphrodite') {
                     sexefr = 'Hermaphrodite'
                 }
 
@@ -149,18 +194,14 @@ document.querySelector('body').addEventListener('keypress', function (e) {
 
     if (e.key === 'Enter') {
         recherche = document.querySelector('#input').value
+
         if (recherche === '') {
             return
         }
-        if (regexVador.test(recherche) === true) {
-
-            getData('vader')
-            return
-        }
         else {
-            console.log(recherche);
-            getData(recherche)
+            annalyserecherche(recherche)
         }
+
 
     }
 });
@@ -169,32 +210,24 @@ document.querySelector('body').addEventListener('keypress', function (e) {
 document.querySelector('#recherche').addEventListener('click', (e) => {
 
     recherche = document.querySelector('#input').value
-    if (recherche === '') {
-        return
-    }
-    if (regexVador.test(recherche) === true) {
-
-        getData('vader')
-
-        return
-    }
-    else {
-        console.log(recherche);
-        getData(recherche)
-    }
-
-
-
+    annalyserecherche(recherche)
 
 
 })
 
 function creationportrait(nom) {
     if (nom === 'vador') {
-        document.querySelector('#portrait').style.animation = "apparition 1.8s ease-in-out 1"
+
         document.querySelector('#portrait').style.background = 'url("/img/vador.png")'
+    }
+    if (nom === 'sidious') {
+
+        document.querySelector('#portrait').style.background = 'url("/img/sidious.png")'
+    }
+    if (nom === 'lando') {
+
+        document.querySelector('#portrait').style.background = 'url("/img/lando.png")'
     }
 
 
 }
-

@@ -62,11 +62,12 @@ span {
 }
 
 #info {
+    display: none;
     position: absolute;
     top: 35%;
     left: 10%;
     transform: translate(-50%, -50%);
-    display: flex;
+
     justify-content: center;
     flex-direction: column;
     margin-left: 28px;
@@ -149,7 +150,7 @@ input {
     width: fit-content;
     display: none;
     z-index: 0;
-  
+
 }
 
 #c3po {
@@ -166,4 +167,8 @@ input {
 
     text-align: center;
 
+}
+
+#calqueportrait {
+    animation: apparition 1.8s ease-in-out infinite alternate;
 }
