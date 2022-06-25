@@ -1,3 +1,14 @@
+@keyframes apparition {
+    from {
+        opacity: 0%;
+    }
+
+    to {
+        opacity: 100%;
+
+    }
+}
+
 html,
 ::after,
 ::before {
@@ -100,6 +111,7 @@ p {
     top: 20px;
     z-index: 1;
     border-radius: 5px;
+    box-shadow: 0px 1px 10px rgb(0, 0, 0), 0px 0px 10px rgba(0, 0, 0, 0.667) inset;
 }
 
 #recherche {
@@ -108,12 +120,23 @@ p {
     color: white;
     user-select: none;
     cursor: pointer;
+    font-size: larger;
+    box-shadow: 0px 1px 5px rgb(0, 0, 0);
+    border-radius: 5px;
 }
 
 input {
     outline: none;
     border-style: none;
     user-select: none;
+    font-size: larger;
+    border-radius: 5px;
+    background-color: #391500;
+    color: orange;
+    padding-left: 7px;
+    box-shadow: 0px 1px 5px rgb(0, 0, 0) inset;
+    border: solid 1px black;
+
 }
 
 #blockalerte {
@@ -124,10 +147,9 @@ input {
     overflow: visible;
     text-align: center;
     width: fit-content;
-    background-color: ;
-
+    display: none;
     z-index: 0;
-    display: flex;
+  
 }
 
 #c3po {
@@ -141,6 +163,7 @@ input {
     top: -25%;
     left: 0%;
     text-shadow: 0px 0px 0px rgb(0, 0, 0);
-    
+
     text-align: center;
+
 }

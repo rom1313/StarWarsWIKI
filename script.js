@@ -4,6 +4,7 @@ let regexVador = /VADOR/gi
 
 
 async function getData(name) {
+    document.querySelector('#portrait').style.background = ''
     let personnage;
 
     let nom;
@@ -35,6 +36,7 @@ async function getData(name) {
                 if (personnage.results[0].name === "Darth Vader") {
                     nomfr = 'Dark Vador (Anakin Skywalker)'
                     nom.textContent = ` ${nomfr} `
+                    creationportrait('vador')
 
                 }
                 else {
@@ -173,6 +175,7 @@ document.querySelector('#recherche').addEventListener('click', (e) => {
     if (regexVador.test(recherche) === true) {
 
         getData('vader')
+
         return
     }
     else {
@@ -185,4 +188,13 @@ document.querySelector('#recherche').addEventListener('click', (e) => {
 
 
 })
+
+function creationportrait(nom) {
+    if (nom === 'vador') {
+        document.querySelector('#portrait').style.animation = "apparition 1.8s ease-in-out 1"
+        document.querySelector('#portrait').style.background = 'url("/img/vador.png")'
+    }
+
+
+}
 
