@@ -29,7 +29,7 @@ async function getData(name) {
             console.log(json);
             personnage = json
             document.querySelector('#portrait').style.display = 'flex'
-            document.querySelector('#portrait').style.animation = 'apparition ease-in 1.2s forwards'
+            
             if (personnage.count > 1 || personnage.count === 0) {
 
                 document.querySelector('#alerte').style.display = 'flex'
