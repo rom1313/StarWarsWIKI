@@ -43,6 +43,12 @@ async function getData(name) {
                     creationportrait('vador')
 
                 }
+                else if (personnage.results[0].name === "Anakin Skywalker") {
+                    nomfr = 'Anakin Skywalker (Jedi)'
+                    nom.textContent = ` ${nomfr} `
+                    creationportrait('anakin')
+
+                }
                 else if (personnage.results[0].name === "Palpatine") {
                     nomfr = 'Dark Sidious (Palpatine)'
                     nom.textContent = ` ${nomfr} `
@@ -227,6 +233,10 @@ function creationportrait(nom) {
     if (nom === 'lando') {
 
         document.querySelector('#portrait').style.background = 'url("/img/lando.png")'
+    }
+    if (nom === 'anakin') {
+
+        document.querySelector('#portrait').style.background = 'url("/img/anakin.png")'
     }
 
 
