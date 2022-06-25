@@ -149,7 +149,7 @@ document.querySelector('body').addEventListener('keypress', function (e) {
             return
         }
         if (regexVador.test(recherche) === true) {
-            console.log('vaddorr');
+
             getData('vader')
             return
         }
@@ -162,13 +162,21 @@ document.querySelector('body').addEventListener('keypress', function (e) {
 });
 
 document.querySelector('#recherche').addEventListener('click', (e) => {
-    let recherche = document.querySelector('#input').value
-    if (recherche === '') {
-        return
-    }
-    else {
-        console.log(recherche);
-        getData(recherche)
+    if (e.key === 'Enter') {
+        recherche = document.querySelector('#input').value
+        if (recherche === '') {
+            return
+        }
+        if (regexVador.test(recherche) === true) {
+
+            getData('vader')
+            return
+        }
+        else {
+            console.log(recherche);
+            getData(recherche)
+        }
+
     }
 
 
