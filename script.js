@@ -216,6 +216,10 @@ async function getData(name) {
                 else if (personnage.results[0].skin_color === "tan") {
                     peaufr = "Bronzé"
                 }
+                else if (personnage.results[0].skin_color === "white, blue") {
+                    peaufr = "Blanc / Bleue"
+                }
+               
 
                 peau.textContent = peaufr
 
