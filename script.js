@@ -6,7 +6,7 @@ let genius = $
 async function getData(name) {
 
     document.querySelector('#portrait').style.background = ''
-    document.querySelector('#portrait').style.display = 'none'
+
 
     document.querySelector('#info').style.display = 'none'
     let personnage;
@@ -27,7 +27,7 @@ async function getData(name) {
         .then((json) => {
             console.log(json);
             personnage = json
-            document.querySelector('#portrait').style.display = 'flex'
+         
 
             if (personnage.count > 1 || personnage.count === 0) {
 
@@ -219,7 +219,7 @@ async function getData(name) {
                 else if (personnage.results[0].skin_color === "white, blue") {
                     peaufr = "Blanc / Bleue"
                 }
-               
+
 
                 peau.textContent = peaufr
 
