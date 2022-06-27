@@ -1,3 +1,8 @@
+let regexVador = /VADOR/gi
+let regexSidious = /SIDIOUS/gi
+let regexDooku = /TYRANUS/gi
+let regexDooku2 = /DOKU/gi
+let regexC3po = /C3PO/gi
 
 function annalyserecherche(motrechecher) {
     if (motrechecher === '') {
@@ -11,9 +16,20 @@ function annalyserecherche(motrechecher) {
 
             return
         }
+        if (regexC3po.test(motrechecher) === true) {
+
+            getData('c-3po')
+
+            return
+        }
         if (regexSidious.test(motrechecher) === true) {
 
             getData('palpatine')
+            return
+        }
+        if (regexDooku.test(motrechecher) === true || regexDooku2.test(motrechecher) === true) {
+
+            getData('dooku')
             return
         }
         else {
@@ -61,6 +77,50 @@ function creationportrait(nom) {
     if (nom === 'quigon') {
 
         document.querySelector('#portrait').style.background = 'url("/img/quigonjin.png")'
+    }
+    if (nom === 'maul') {
+
+        document.querySelector('#portrait').style.background = 'url("/img/maul.png")'
+    }
+    if (nom === 'jango') {
+
+        document.querySelector('#portrait').style.background = 'url("/img/jango.png")'
+    }
+    if (nom === 'boba') {
+
+        document.querySelector('#portrait').style.background = 'url("/img/boba.png")'
+    }
+    if (nom === 'jabba') {
+
+        document.querySelector('#portrait').style.background = 'url("/img/jabba.png")'
+    }
+    if (nom === 'hansolo') {
+
+        document.querySelector('#portrait').style.background = 'url("/img/hansolo.png")'
+    }
+    if (nom === 'dooku') {
+
+        document.querySelector('#portrait').style.background = 'url("/img/dooku.png")'
+    }
+    if (nom === 'r2d2') {
+
+        document.querySelector('#portrait').style.background = 'url("/img/r2d2.png")'
+    }
+    if (nom === 'c3po') {
+
+        document.querySelector('#portrait').style.background = 'url("/img/c3po.png")'
+    }
+    if (nom === 'leia') {
+
+        document.querySelector('#portrait').style.background = 'url("/img/leia.png")'
+    }
+    if (nom === 'chewbacca') {
+
+        document.querySelector('#portrait').style.background = 'url("/img/chewbacca.png")'
+    }
+    if (nom === 'windu') {
+
+        document.querySelector('#portrait').style.background = 'url("/img/windu.png")'
     }
 
 

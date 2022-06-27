@@ -1,7 +1,6 @@
 let recherche;
 let genius = $
-let regexVador = /VADOR/gi
-let regexSidious = /SIDIOUS/gi
+
 
 
 async function getData(name) {
@@ -29,7 +28,7 @@ async function getData(name) {
             console.log(json);
             personnage = json
             document.querySelector('#portrait').style.display = 'flex'
-            
+
             if (personnage.count > 1 || personnage.count === 0) {
 
                 document.querySelector('#alerte').style.display = 'flex'
@@ -54,6 +53,17 @@ async function getData(name) {
                     creationportrait('vador')
 
                 }
+                else if (personnage.results[0].name === "Leia Organa") {
+                    nomfr = 'Leia Organa (Princesse Leia)'
+                    nom.textContent = ` ${nomfr} `
+                    creationportrait('leia')
+
+                }
+                else if (personnage.results[0].name === "Han Solo") {
+                    nom.textContent = ` ${personnage.results[0].name} `
+                    creationportrait('hansolo')
+
+                }
                 else if (personnage.results[0].name === "Anakin Skywalker") {
                     nomfr = 'Anakin Skywalker (Jedi)'
                     nom.textContent = ` ${nomfr} `
@@ -64,6 +74,18 @@ async function getData(name) {
                     nomfr = 'Dark Sidious (Palpatine)'
                     nom.textContent = ` ${nomfr} `
                     creationportrait('sidious')
+
+                }
+                else if (personnage.results[0].name === "Darth Maul") {
+                    nomfr = 'Dark Maul'
+                    nom.textContent = ` ${nomfr} `
+                    creationportrait('maul')
+
+                }
+                else if (personnage.results[0].name === "Dooku") {
+                    nomfr = 'Dark Tyranus (Conte Dooku)'
+                    nom.textContent = ` ${nomfr} `
+                    creationportrait('dooku')
 
                 }
                 else if (personnage.results[0].name === "Lando Calrissian") {
@@ -102,6 +124,48 @@ async function getData(name) {
                     nom.textContent = ` ${personnage.results[0].name} `
 
                     creationportrait('quigon')
+
+                }
+                else if (personnage.results[0].name === "Jabba Desilijic Tiure") {
+                    nom.textContent = ` ${personnage.results[0].name} `
+
+                    creationportrait('jabba')
+
+                }
+                else if (personnage.results[0].name === "R2-D2") {
+                    nom.textContent = ` ${personnage.results[0].name} `
+
+                    creationportrait('r2d2')
+
+                }
+                else if (personnage.results[0].name === "C-3PO") {
+                    nom.textContent = ` ${personnage.results[0].name} `
+
+                    creationportrait('c3po')
+
+                }
+                else if (personnage.results[0].name === "Boba Fett") {
+                    nom.textContent = ` ${personnage.results[0].name} `
+
+                    creationportrait('boba')
+
+                }
+                else if (personnage.results[0].name === "Jango Fett") {
+                    nom.textContent = ` ${personnage.results[0].name} `
+
+                    creationportrait('jango')
+
+                }
+                else if (personnage.results[0].name === "Chewbacca") {
+                    nom.textContent = ` ${personnage.results[0].name} `
+
+                    creationportrait('chewbacca')
+
+                }
+                else if (personnage.results[0].name === "Mace Windu") {
+                    nom.textContent = ` ${personnage.results[0].name} `
+
+                    creationportrait('windu')
 
                 }
                 else {
@@ -145,6 +209,12 @@ async function getData(name) {
                 }
                 else if (personnage.results[0].skin_color === "red") {
                     peaufr = "Rouge"
+                }
+                else if (personnage.results[0].skin_color === "gold") {
+                    peaufr = "Doré"
+                }
+                else if (personnage.results[0].skin_color === "tan") {
+                    peaufr = "Bronzé"
                 }
 
                 peau.textContent = peaufr
