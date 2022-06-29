@@ -30,6 +30,8 @@ html,
     background-color: #FAD961;
     background-image: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);
     user-select: none;
+    display: flex;
+
 
 }
 
@@ -41,7 +43,7 @@ body {}
     border: solid 0.5px black;
     width: 800px;
     height: 400px;
-    top: 65%;
+    top: 58%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 15px;
@@ -50,9 +52,19 @@ body {}
 
 }
 
+#lucas {
+    position: absolute;
+    top: 112%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+
+
+}
+
 #titre {
     position: absolute;
-    top: 15%;
+    top: 13%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -175,42 +187,199 @@ input {
     animation: apparition 1.8s ease-in-out infinite alternate;
 }
 
-@media (min-width: 2000px) {
+@media (min-width: 2500px) and (max-width: 3000px) {
 
     #card {
+        top: 55%;
+
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #titre {
+        top: 12%;
+
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    input {
+        position: absolute;
         top: 30%;
 
         left: 50%;
         transform: translate(-50%, -50%);
     }
+
+    #recherche {
+        top: 31%;
+        position: absolute;
+        left: 58%;
+        transform: translate(-50%, -50%);
+    }
+
+    #alerte {
+        top: 35%;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #lucas {
+        position: absolute;
+        top: 145%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30%;
+
+
+    }
+
 }
 
-@media (min-width: 1900px) and (max-width: 2999px) {
+@media (min-width: 1900px) and (max-width: 2500px) {
 
     #card {
-        top: 50%;
+        top: 60%;
 
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    #titre {
+        top: 11%;
+
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    input {
+        position: absolute;
+        top: 30%;
+
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #recherche {
+        top: 31.4%;
+        position: absolute;
+        left: 60%;
+        transform: translate(-50%, -50%);
+    }
+
+    #alerte {
+        top: 35%;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #lucas {
+        position: absolute;
+        top: 125%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30%;
+
+
     }
 }
 
 @media (min-width: 1600px) and (max-width: 1919px) {
 
     #card {
-        top: 55%;
+        top: 65%;
 
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    #titre {
+        top: 12%;
+
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    input {
+        position: absolute;
+        top: 30%;
+
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #recherche {
+        top: 31.4%;
+        position: absolute;
+        left: 63%;
+        transform: translate(-50%, -50%);
+    }
+
+    #alerte {
+        top: 35%;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #lucas {
+        position: absolute;
+        top: 115%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30%;
+
+
     }
 }
 
 @media (min-width: 1440px) and (max-width: 1599px) {
 
     #card {
-        top: 55%;
+        top: 60%;
 
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    #titre {
+        top: 12%;
+
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    input {
+        position: absolute;
+        top: 30%;
+
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #recherche {
+        top: 31.4%;
+        position: absolute;
+        left: 64%;
+        transform: translate(-50%, -50%);
+    }
+
+    #alerte {
+        top: 35%;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #lucas {
+        position: absolute;
+        top: 120%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 30%;
+
+
     }
 }
