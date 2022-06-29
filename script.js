@@ -27,7 +27,7 @@ async function getData(name) {
         .then((json) => {
             console.log(json);
             personnage = json
-         
+
 
             if (personnage.count > 1 || personnage.count === 0) {
 
@@ -184,7 +184,23 @@ async function getData(name) {
 
                 // todo ------------------------- naissance
                 naissance = document.querySelector('#naissance')
-                naissance.textContent = ` ${personnage.results[0].birth_year} `
+                let naissancefr = []
+                let naissancevalue = Array.from(personnage.results[0].birth_year)
+                naissancevalue.forEach(element => {
+                    if (element === 'B' || element === 'Y') {
+                        element = ''
+                    }
+                    else {
+                        naissancefr.push(element)
+                    }
+                });
+
+                naissancefr = naissancefr.toString()
+                console.log(naissancefr);
+                naissancefr = naissancefr.replace(/,/g, '')
+                naissancefr += ' av la bataille de Yavin'
+
+                naissance.textContent = ` ${naissancefr}`
 
                 // todo ------------------------- peau
                 peau = document.querySelector('#peau')
@@ -215,6 +231,9 @@ async function getData(name) {
                 }
                 else if (personnage.results[0].skin_color === "tan") {
                     peaufr = "Bronzé"
+                }
+                else if (personnage.results[0].skin_color === "unknown") {
+                    peaufr = "Inconnu"
                 }
                 else if (personnage.results[0].skin_color === "white, blue") {
                     peaufr = "Blanc / Bleue"
