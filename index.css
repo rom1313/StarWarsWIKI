@@ -382,4 +382,109 @@ input {
 
 
     }
+
+}
+
+@media (min-width: 300px) and (max-width: 600px) {
+    #card {
+        position: absolute;
+        background-color: #391500;
+        border: solid 0.5px black;
+        width: 340px;
+        height: 650px;
+        top: 78%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 15px;
+        box-shadow: 0px 1px 10px rgb(0, 0, 0), 0px 0px 10px rgba(0, 0, 0, 0.667) inset;
+        border: solid 1px black;
+
+    }
+
+    #portrait {
+        background-color: black;
+
+        width: 310px;
+        height: 360px;
+        position: absolute;
+        right: 15px;
+        top: 20px;
+        z-index: 1;
+        border-radius: 5px;
+        box-shadow: 0px 1px 10px rgb(0, 0, 0), 0px 0px 10px rgba(0, 0, 0, 0.667) inset;
+  
+
+    }
+
+    #titre {
+        width: 50%;
+        top: 45px;
+    }
+
+    body {
+        width: 100vw;
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+
+    }
+
+    input {
+        position: absolute;
+        top: 110px;
+
+
+        left: 35%;
+        transform: translate(-50%, -50%);
+
+    }
+
+    #calqueportrait {
+        width: 310px;
+        height: 360PX;
+    }
+
+    #recherche {
+        top: 123px;
+        position: absolute;
+        left: 85%;
+        transform: translate(-50%, -50%);
+        font-size: 18px;
+    }
+
+    #info {
+
+        display: none;
+        position: absolute;
+        top: 79%;
+
+        left: 34%;
+        transform: translate(-50%, -50%);
+
+
+
+        z-index: 2;
+
+
+    }
+
+    .blockinfo {
+        width: 300px;
+        margin: 0;
+
+    }
+
+    p {
+        font-size: medium;
+        padding-bottom: 4px;
+        height: fit-content;
+        color: rgb(255, 255, 255);
+        width: fit-content;
+        font-family: 'Times New Roman', Times, serif;
+        text-shadow: 0px 0px 9px rgb(0, 0, 0);
+
+
+    }
+
+
 }

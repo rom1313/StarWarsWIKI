@@ -3,7 +3,7 @@ let regexSidious = /SIDIOUS/gi
 let regexDooku = /TYRANUS/gi
 let regexDooku2 = /DOKU/gi
 let regexC3po = /C3PO/gi
-
+let story = { vador: 'Il été une fois balbla' }
 function annalyserecherche(motrechecher) {
     if (motrechecher === '') {
         return
@@ -45,6 +45,7 @@ function creationportrait(nom) {
     if (nom === 'vador') {
 
         document.querySelector('#portrait').style.background = 'url("/img/vador.png")'
+
     }
     if (nom === 'sidious') {
 
